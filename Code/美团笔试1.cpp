@@ -68,3 +68,33 @@ int main()
 	cout >> res;
 	return 0;
 }
+
+//王之博版本
+/*
+
+int main(int argc, char* argv[])
+{
+    string s = "abacada";
+    string t = "abc";
+
+    vector<vector<int>> p(26, vector<int>(1, 0));
+    for (char c : s) {
+        for (int i = 0; i < 26; i++) {
+            p[i].push_back(p[i].back());
+            if (c - 'a' == i) {
+                ++p[i].back();
+            }
+        }
+    }
+    int cl = s.length() - t.length() + 1;
+    int ans = 0;
+    for (unsigned i = 0; i < t.length(); i++) {
+        ans += cl - (p[t[i] - 'a'][i + cl] - p[t[i] - 'a'][i]);
+    }
+
+    println(ans);
+
+    return 0;
+}
+
+*/
